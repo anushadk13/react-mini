@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./style.css"
 
 function Week1() {
     let weatherData = {
@@ -25,33 +25,29 @@ function Week1() {
         </form>
         <div className="overview">
             <h1 className='heading'>{weatherData.city}</h1>
-            <ul>
+            <ul className='update'>
                 <li>Last updated : {weatherData.date}</li>
                 <li> {weatherData.description}</li>
+                <li>Humidity: {weatherData.humidity}%</li>
+            <li>Wind: {weatherData.wind} km/h</li>
+            <li><strong>{weatherData.temperature}</strong>
+                        <span className='units'>
+                            <a href ='/'>°C</a> | <a href ='/'>°F</a>
+                        </span></li>
             </ul>
         </div>
-        <div className="row">
-            <div className="col-6">
-                <div className="weather-temperature">
-                    <img src = {weatherData.imgUrl} alt ={weatherData.description} className='float-left'/>
-                    <div className="float-left">
-                        <strong>{weatherData.temperature}</strong>
-                        <span className='units'>
-                            <a href ='/'>C</a> | <a href ='/'>F</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div className="col-6">
-            <ul>
-            <li>Humidity: {weatherData.humidity}%</li>
-            <li>Wind: {weatherData.wind} km/h</li>
-          </ul>
         
-            </div>
-        </div>
-      
+       <footer>
+        <p className='foot'>This project is coded by Anusha and { "  "}
+            <a href="https://github.com/anushadk13/react-mini">
+                   open sourced.
+            </a>
+        </p>
+       </footer>
+
     </div>
+
+   
   )
 }
 
